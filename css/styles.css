@@ -1,0 +1,29 @@
+.modal-img {
+      max-width: 350px;
+      height: auto;
+      border-radius: 12px;
+    }
+    .modal-content {
+      background-color: #1e1e1e; /* darker tone */
+      border: none;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+    .btn-close {
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 0.5rem;
+    }
+    .modal-body {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1rem 1rem 1rem;
+    }
+    .btn-close-custom {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 10;
+    }
