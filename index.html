@@ -14,11 +14,10 @@ body {
     color: #212529;
     margin: 0;
     line-height: 1.7;
-    overflow-y: auto; /* vertical scrollbar only when needed */
-    overflow-x: hidden; /* hide horizontal scrollbar */
+    overflow-y: auto; 
+    overflow-x: hidden; 
 }
 
-/* Optional: hide scrollbar visually but allow scrolling (for modern browsers) */
 body::-webkit-scrollbar {
     width: 0;
     background: transparent;
@@ -200,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameEl = document.getElementById("typed-name");
     const taglineEl = document.getElementById("typed-tagline");
     typeWriter(nameEl, "Tanay Shah", 120, () => {
-        typeWriter(taglineEl, "Aspiring Full Stack Web Developer & Android App Developer", 60);
+        typeWriter(taglineEl, "Aspiring Full Stack Web Developer | Android App Developer", 60);
     });
 });
 </script>
