@@ -4,19 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Papers | Tanay Shah</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #212529;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .navbar-glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      position: relative;
+      padding: 8px 15px;
+    }
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #0d6efd;
+      transition: width 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+    h2.section-title {
+      font-weight: 600;
+      margin-bottom: 40px;
+      border-bottom: 3px solid #0d6efd;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .paper-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-left: 4px solid #0d6efd;
+    }
+    .paper-card img {
+      width: 160px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .paper-content h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .paper-content p {
+      font-size: 0.95rem;
+      color: #495057;
+    }
+    .paper-content .btn {
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+      .paper-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .paper-card img {
+        margin-bottom: 15px;
+      }
+      .paper-content {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-glass">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-glass">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end project-card" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
@@ -24,51 +101,58 @@
           <li class="nav-item"><a class="nav-link active" href="/papers.html">Papers</a></li>
           <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
         </ul>
-        <a href="/assets/resume/my-resume.pdf" class="btn btn-outline-light ms-3" download>
-          <i class="fas fa-download me-2"></i>Resume</a>
+        <div class="dropdown ms-3">
+          <button class="btn btn-light text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <i class="fas fa-file-alt me-2"></i> Resume
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/assets/resume/my-resume.pdf" target="_blank"><i class="fas fa-eye me-2"></i>View Online</a></li>
+            <li><a class="dropdown-item" href="/assets/resume/my-resume.pdf" download><i class="fas fa-download me-2"></i>Download</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
 
   <!-- Main Content -->
   <main class="container mt-5 pt-5">
-    <h2 class="text-center mb-4">My Research Papers</h2>
+    <h2 class="section-title">My Research Papers</h2>
 
     <!-- Paper 1 -->
-    <div class="row align-items-center mb-4">
-      <div class="col-md-4 text-center">
-        <img src="/assets/papers/gesture-recognition-thumb.png" alt="Paper Thumbnail" class="certificate-thumb" width="200">
-      </div>
-      <div class="col-md-8">
+    <div class="paper-card">
+      <img src="/assets/papers/gesture-recognition-thumb.png" alt="Gesture Recognition Paper">
+      <div class="paper-content">
         <h5>Advanced Techniques in Hand Gesture Recognition for AR and HCI</h5>
         <p>
-          Discusses machine learning and sensor-based methods for accurate hand gesture recognition in AR and human-computer interaction.
+          Discusses machine learning and sensor-based methods for accurate hand gesture recognition 
+          in AR and human-computer interaction.
         </p>
-        <a href="/assets/papers/gesture-recognition.pdf" target="_blank" class="btn btn-primary me-2">
-          <i class="fas fa-eye"></i> View
+        <a href="/assets/papers/gesture-recognition.pdf" target="_blank" class="btn btn-primary">
+          <i class="fas fa-eye me-1"></i> View
         </a>
         <a href="/assets/papers/gesture-recognition.pdf" download class="btn btn-success">
-          <i class="fas fa-download"></i> Download
+          <i class="fas fa-download me-1"></i> Download
         </a>
       </div>
     </div>
 
-    <!-- Paper 2 with Loader -->
-    <div class="row align-items-center mb-5">
-      <div class="col-md-4 text-center">
-        <img src="/assets/papers/quantum-placeholder-thumb.png" alt="Quantum Paper Thumbnail" class="certificate-thumb" width="200">
-      </div>
-      <div class="col-md-8">
+    <!-- Paper 2 -->
+    <div class="paper-card">
+      <img src="/assets/papers/quantum-placeholder-thumb.png" alt="Quantum Paper">
+      <div class="paper-content">
         <h5>Quantum Inspired Drug Design using Qudits</h5>
         <p>
-          Explores how qudits enable efficient molecular simulations and faster drug discovery through quantum-inspired methods.
+          Explores how qudits enable efficient molecular simulations and faster drug discovery 
+          through quantum-inspired methods.
         </p>
         <button class="btn btn-secondary" disabled>
           <i class="fas fa-spinner fa-spin"></i> Coming Soon
         </button>
       </div>
     </div>
-    
+
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,203 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tanay Shah | Home</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
-      color: #212529;
-    }
-    #home h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    #home p.lead {
-      font-size: 1.25rem;
-      color: #6c757d;
-    }
-    .filter-btns {
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .filter-btns button {
-      padding: 8px 18px;
-      border: none;
-      border-radius: 25px;
-      background-color: #6610f2;
-      color: white;
-      cursor: pointer;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .filter-btns button:hover {
-      background-color: #5200c6;
-    }
-    .filter-btns button.active {
-      background-color: #0d6efd;
-    }
-    .filtered-skill-card {
-      display: none;
-      max-width: 450px;
-      margin: 0 auto 25px;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 25px 20px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-      border: 3px solid;
-      border-image-slice: 1;
-      border-image-source: linear-gradient(45deg, #6610f2, #0d6efd);
-    }
-    .filtered-skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-    }
-    .filtered-skill-card h5 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      background: linear-gradient(45deg, #6610f2, #0d6efd);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .filtered-skill-card ul {
-      list-style: none;
-      padding: 0;
-    }
-    .filtered-skill-card ul li {
-      margin-bottom: 8px;
-      font-size: 1rem;
-      color: #495057;
-    }
-    .navbar-glass {
-      backdrop-filter: blur(12px);
-      background-color: rgba(0, 0, 0, 0.85) !important;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tanay Shah | Home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+    margin: 0;
+    line-height: 1.7;
+    overflow-y: auto; /* vertical scrollbar only when needed */
+    overflow-x: hidden; /* hide horizontal scrollbar */
+}
+
+/* Optional: hide scrollbar visually but allow scrolling (for modern browsers) */
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.navbar-glass {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+.navbar-nav .nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 8px 15px;
+}
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0d6efd;
+    transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after { width: 100%; }
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("/assets/hero-image.png") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    color: #fff;
+    padding-left: 5%;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4));
+}
+.hero-content { position: relative; z-index: 2; max-width: 650px; }
+.hero-content h1, .hero-content p {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid #0d6efd;
+}
+.hero-content h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 15px; }
+.hero-content p { font-size: 1.3rem; color: #e9ecef; font-weight: 400; }
+
+.highlights { margin: 60px 0; }
+.highlights .col-md-3 { margin-bottom: 20px; }
+.highlights i { font-size: 2rem; color: #0d6efd; margin-bottom: 10px; }
+
+.skills-section h2 {
+    font-weight: 600;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #0d6efd;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.skill-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border-left: 4px solid #0d6efd;
+}
+.skill-card h5 { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; }
+.skill-card ul { list-style: none; padding: 0; margin: 0; }
+.skill-card ul li { margin-bottom: 6px; font-size: 1rem; color: #495057; }
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content p { font-size: 1rem; }
+}
+</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-glass">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end project-card" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="/certificates.html">Certificates</a></li>
-          <li class="nav-item"><a class="nav-link" href="/papers.html">Papers</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-        </ul>
-        <a href="/assets/resume/my-resume.pdf" class="btn btn-outline-light ms-3" download>
-          <i class="fas fa-download me-2"></i>Resume</a>
-      </div>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-glass">
+<div class="container-fluid">
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="/certificates.html">Certificates</a></li>
+<li class="nav-item"><a class="nav-link" href="/papers.html">Papers</a></li>
+<li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+</ul>
+<div class="dropdown ms-3">
+<button class="btn btn-light text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+<i class="fas fa-file-alt me-2"></i> Resume
+</button>
+<ul class="dropdown-menu dropdown-menu-end">
+<li><a class="dropdown-item" href="/assets/resume/my-resume.pdf" target="_blank"><i class="fas fa-eye me-2"></i>View Online</a></li>
+<li><a class="dropdown-item" href="/assets/resume/my-resume.pdf" download><i class="fas fa-download me-2"></i>Download</a></li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
 
-  <main class="container mt-5 pt-5 text-center" id="home">
-    <h1>Tanay Shah</h1>
-    <p class="lead">Aspiring Full Stack Web Developer & Android App Developer</p>
-    <p>
-      I specialize in building responsive web and mobile applications using modern tech. Passionate about problem-solving and user-focused design, I bring a practical and creative approach to development.
-    </p>
+<section class="hero">
+<div class="hero-content">
+<h1 id="typed-name"></h1>
+<p id="typed-tagline"></p>
+</div>
+</section>
 
-    <div class="filter-btns">
-      <button class="active" data-skill="frontend">Frontend</button>
-      <button data-skill="backend">Backend</button>
-      <button data-skill="databases">Databases</button>
-      <button data-skill="app">App Development</button>
-      <button data-skill="tools">Tools & Others</button>
-      <button data-skill="soft">Soft Skills</button>
-    </div>
+<main class="container mt-5 pt-5">
+<section class="text-center">
+<p>I specialize in building responsive web and mobile applications using modern technologies. Passionate about problem-solving and user-focused design, I bring a practical and creative approach to development.</p>
+</section>
 
-    <div id="frontend" class="filtered-skill-card">
-      <h5>Frontend</h5>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>NodeJS</li>
-        <li>jQuery</li>
-        <li>Bootstrap</li>
-        <li>Tailwind CSS</li>
-      </ul>
-    </div>
-    <div id="backend" class="filtered-skill-card">
-      <h5>Backend</h5>
-      <ul>
-        <li>Express.js</li>
-        <li>Web Sockets</li>
-      </ul>
-    </div>
-    <div id="databases" class="filtered-skill-card">
-      <h5>Databases</h5>
-      <ul>
-        <li>MySQL</li>
-        <li>PostgreSQL</li>
-        <li>MongoDB</li>
-      </ul>
-    </div>
-    <div id="app" class="filtered-skill-card">
-      <h5>App Development</h5>
-      <ul>
-        <li>Android Studio</li>
-        <li>Kotlin</li>
-        <li>Java</li>
-      </ul>
-    </div>
-    <div id="tools" class="filtered-skill-card">
-      <h5>Tools & Others</h5>
-      <ul>
-        <li>Git & GitHub</li>
-        <li>REST APIs</li>
-      </ul>
-    </div>
-    <div id="soft" class="filtered-skill-card">
-      <h5>Soft Skills</h5>
-      <ul>
-        <li>Problem Solving</li>
-        <li>Critical Thinking</li>
-        <li>Adaptability</li>
-        <li>Attention to Detail</li>
-        <li>Teamwork</li>
-        <li>Communication</li>
-        <li>Presentation Skills</li>
-        <li>Documentation</li>
-        <li>Self-Motivation</li>
-        <li>Initiative</li>
-        <li>Continuous Learning</li>
-        <li>Time Management</li>
-      </ul>
-    </div>
-  </main>
+<section class="highlights text-center">
+<div class="row">
+<div class="col-md-3"><i class="fas fa-code"></i><p>Full Stack Development</p></div>
+<div class="col-md-3"><i class="fas fa-mobile-alt"></i><p>Android App Development</p></div>
+<div class="col-md-3"><i class="fas fa-database"></i><p>Databases & APIs</p></div>
+<div class="col-md-3"><i class="fas fa-lightbulb"></i><p>Problem Solving</p></div>
+</div>
+</section>
 
-  <script>
-    document.querySelectorAll('.filtered-skill-card').forEach(card => card.style.display = 'none');
-    document.getElementById('frontend').style.display = 'block';
-    const buttons = document.querySelectorAll('.filter-btns button');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const skill = btn.getAttribute('data-skill');
-        document.querySelectorAll('.filtered-skill-card').forEach(card => card.style.display = 'none');
-        document.getElementById(skill).style.display = 'block';
-      });
+<section class="skills-section">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="skill-card">
+<h5>Frontend</h5>
+<ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Bootstrap</li><li>Tailwind CSS</li></ul>
+</div>
+<div class="skill-card">
+<h5>Backend</h5>
+<ul><li>Node.js</li><li>Express.js</li><li>WebSockets</li></ul>
+</div>
+<div class="skill-card">
+<h5>Databases</h5>
+<ul><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li></ul>
+</div>
+<div class="skill-card">
+<h5>App Development</h5>
+<ul><li>Android Studio</li><li>Kotlin</li><li>Java</li></ul>
+</div>
+<div class="skill-card">
+<h5>Tools & Others</h5>
+<ul><li>Git & GitHub</li><li>REST APIs</li></ul>
+</div>
+<div class="skill-card">
+<h5>Soft Skills</h5>
+<ul><li>Problem Solving</li><li>Critical Thinking</li><li>Teamwork</li><li>Communication</li><li>Time Management</li></ul>
+</div>
+</div>
+</section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function typeWriter(el, text, delay = 100, callback) {
+    let i = 0;
+    function typing() {
+        if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(typing, delay);
+        } else {
+            el.style.borderRight = "none";
+            if (callback) callback();
+        }
+    }
+    typing();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nameEl = document.getElementById("typed-name");
+    const taglineEl = document.getElementById("typed-tagline");
+    typeWriter(nameEl, "Tanay Shah", 120, () => {
+        typeWriter(taglineEl, "Aspiring Full Stack Web Developer & Android App Developer", 60);
     });
-  </script>
-
-  <script src="/js/portfolio.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+});
+</script>
 </body>
 </html>

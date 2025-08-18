@@ -3,18 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  <title>Tanay Shah | Contact</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #212529;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* Navbar styling */
+    .navbar-glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      position: relative;
+      padding: 8px 15px;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #0d6efd;
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Contact section */
+    .contact-section {
+      margin: 100px auto 60px auto;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    /* Profile image */
+    .contact-section img.profile-pic {
+      cursor: pointer;
+      border: 4px solid #0d6efd;
+    }
+
+    /* Contact list */
+    .contact-section ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .contact-section li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .contact-section li img {
+      margin-right: 10px;
+      border: none; /* remove borders from contact icons */
+    }
+
+    .contact-section a {
+      text-decoration: none;
+      color: #0d6efd;
+      font-weight: 500;
+    }
+
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal profile image */
+    .modal-body img {
+      border: 4px solid #0d6efd;
+    }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-glass">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-glass">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end project-card" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
@@ -22,57 +107,42 @@
           <li class="nav-item"><a class="nav-link" href="/papers.html">Papers</a></li>
           <li class="nav-item"><a class="nav-link active" href="/contact.html">Contact</a></li>
         </ul>
-        <a href="/assets/resume/my-resume.pdf" class="btn btn-outline-light ms-3" download>
-          <i class="fas fa-download me-2"></i>Resume</a>
+        <div class="dropdown ms-3">
+          <button class="btn btn-light text-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <i class="fas fa-file-alt me-2"></i> Resume
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/assets/resume/my-resume.pdf" target="_blank"><i class="fas fa-eye me-2"></i>View Online</a></li>
+            <li><a class="dropdown-item" href="/assets/resume/my-resume.pdf" download><i class="fas fa-download me-2"></i>Download</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
 
-  <section class="pt-5 mt-5 container">
-    <div class="text-center mt-5">
-      <img src="/assets/profile/profile-picture.jpg" 
-           alt="Profile" 
-           class="rounded-circle mb-3 contact-img"
-           width="150" height="150" 
-           data-bs-toggle="modal" data-bs-target="#profileModal"
-           style="cursor: pointer;" />
+  <!-- Contact Section -->
+  <main class="container contact-section">
+    <img src="/assets/profile/profile-picture.jpg" alt="Profile" class="rounded-circle mb-3 profile-pic" width="150" height="150" data-bs-toggle="modal" data-bs-target="#profileModal" />
+    <ul>
+      <li><img src="/assets/icons/phone.png" width="28" height="28"> <strong class="me-2">Phone:</strong> +91 9870786749</li>
+      <li><img src="/assets/icons/email.png" width="28" height="28"> <strong class="me-2">Email:</strong> <a href="mailto:tanayshah0709@gmail.com">tanayshah0709@gmail.com</a></li>
+      <li><img src="/assets/icons/linkedln-logo.png" width="28" height="28"> <strong class="me-2">LinkedIn:</strong> <a href="https://www.linkedin.com/in/tanay-shah-63a989257/" target="_blank">linkedin.com/in/tanay-shah</a></li>
+      <li><img src="/assets/icons/github-logo.png" width="28" height="28"> <strong class="me-2">GitHub:</strong> <a href="https://github.com/TanayShah07" target="_blank">github.com/TanayShah07</a></li>
+    </ul>
+  </main>
 
-      <h2>Contact Me</h2>
-      <p class="lead">Let's connect!</p>
-      <ul class="list-unstyled">
-        <li class="d-flex align-items-center justify-content-center mb-2">
-          <img src="/assets/icons/phone.png" width="30" height="30" class="me-2">
-          <strong class="me-2">Phone:</strong> +91 9870786749
-        </li>
-        <li class="d-flex align-items-center justify-content-center mb-2">
-          <img src="/assets/icons/email.png" width="30" height="30" class="me-2">
-          <strong class="me-2">Email:</strong> <a href="mailto:tanayshah0709@gmail.com">tanayshah0709@gmail.com</a>
-        </li>
-        <li class="d-flex align-items-center justify-content-center mb-2">
-          <img src="/assets/icons/linkedln-logo.png" width="30" height="30" class="me-2">
-          <strong class="me-2">LinkedIn:</strong> <a href="https://www.linkedin.com/in/tanay-shah-63a989257/" target="_blank">linkedin.com/in/tanay-shah</a>
-        </li>
-        <li class="d-flex align-items-center justify-content-center mb-2">
-          <img src="/assets/icons/github-logo.png" width="30" height="30" class="me-2">
-          <strong class="me-2">GitHub:</strong> <a href="https://github.com/TanayShah07" target="_blank">github.com/TanayShah07</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <!-- Profile Modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="btn-close btn-close-custom" data-bs-dismiss="modal" aria-label="Close"></button>
-          <img src="/assets/profile/profile-picture.jpg" class="img-fluid rounded-circle mx-auto d-block"
-          style="width: 250px; height: 250px; object-fit: cover;" alt="Full Profile" />
+        <div class="modal-body text-center position-relative">
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <img src="/assets/profile/profile-picture.jpg" class="img-fluid rounded-circle" style="width: 250px; height: 250px; object-fit: cover;" alt="Full Profile" />
         </div>
       </div>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="/js/portfolio.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
