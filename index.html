@@ -17,12 +17,10 @@ body {
     overflow-y: auto; 
     overflow-x: hidden; 
 }
-
 body::-webkit-scrollbar {
     width: 0;
     background: transparent;
 }
-
 .navbar-glass {
     backdrop-filter: blur(12px);
     background-color: rgba(0, 0, 0, 0.9) !important;
@@ -43,7 +41,6 @@ body::-webkit-scrollbar {
     transition: width 0.3s ease;
 }
 .navbar-nav .nav-link:hover::after { width: 100%; }
-
 .hero {
     position: relative;
     height: 100vh;
@@ -62,18 +59,38 @@ body::-webkit-scrollbar {
     background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.4));
 }
 .hero-content { position: relative; z-index: 2; max-width: 650px; }
-.hero-content h1, .hero-content p {
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .15em solid #0d6efd;
+.hero-content h1 { 
+    font-size: 3.5rem; 
+    font-weight: 700; 
+    margin-bottom: 15px; 
 }
-.hero-content h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 15px; }
-.hero-content p { font-size: 1.3rem; color: #e9ecef; font-weight: 400; }
+.hero-content p { 
+    font-size: 1.3rem; 
+    color: #e9ecef; 
+    font-weight: 400; 
+    display: inline-block;
+}
 
+/* Cursor effect (controlled via JS) */
+.cursor {
+    border-right: .15em solid #0d6efd;
+    animation: blink 0.7s step-end infinite;
+}
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: #0d6efd; }
+}
+
+.hero-content .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-content .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+}
 .highlights { margin: 60px 0; }
 .highlights .col-md-3 { margin-bottom: 20px; }
 .highlights i { font-size: 2rem; color: #0d6efd; margin-bottom: 10px; }
-
 .skills-section h2 {
     font-weight: 600;
     margin-bottom: 30px;
@@ -92,7 +109,6 @@ body::-webkit-scrollbar {
 .skill-card h5 { font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; }
 .skill-card ul { list-style: none; padding: 0; margin: 0; }
 .skill-card ul li { margin-bottom: 6px; font-size: 1rem; color: #495057; }
-
 @media (max-width: 768px) {
     .hero-content h1 { font-size: 2.5rem; }
     .hero-content p { font-size: 1rem; }
@@ -125,19 +141,19 @@ body::-webkit-scrollbar {
 </div>
 </div>
 </nav>
-
 <section class="hero">
 <div class="hero-content">
 <h1 id="typed-name"></h1>
-<p id="typed-tagline"></p>
+<p id="typed-tagline"></p><br>
+<a href="/projects.html" class="btn btn-primary btn-lg mt-3">
+  <i class="fas fa-folder-open me-2"></i> View My Projects
+</a>
 </div>
 </section>
-
 <main class="container mt-5 pt-5">
 <section class="text-center">
 <p>I specialize in building responsive web and mobile applications using modern technologies. Passionate about problem-solving and user-focused design, I bring a practical and creative approach to development.</p>
 </section>
-
 <section class="highlights text-center">
 <div class="row">
 <div class="col-md-3"><i class="fas fa-code"></i><p>Full Stack Development</p></div>
@@ -146,7 +162,6 @@ body::-webkit-scrollbar {
 <div class="col-md-3"><i class="fas fa-lightbulb"></i><p>Problem Solving</p></div>
 </div>
 </section>
-
 <section class="skills-section">
 <h2>Skills</h2>
 <div class="skills-grid">
@@ -177,29 +192,65 @@ body::-webkit-scrollbar {
 </div>
 </section>
 </main>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-function typeWriter(el, text, delay = 100, callback) {
-    let i = 0;
-    function typing() {
-        if (i < text.length) {
-            el.textContent += text.charAt(i);
-            i++;
-            setTimeout(typing, delay);
-        } else {
-            el.style.borderRight = "none";
-            if (callback) callback();
-        }
-    }
-    typing();
-}
-
 document.addEventListener("DOMContentLoaded", () => {
     const nameEl = document.getElementById("typed-name");
     const taglineEl = document.getElementById("typed-tagline");
-    typeWriter(nameEl, "Tanay Shah", 120, () => {
-        typeWriter(taglineEl, "Aspiring Full Stack Web Developer | Android App Developer", 60);
+
+    const fixed = "Aspiring ";
+    const words = ["Full Stack Web Developer", "Android App Developer"];
+
+    const typingDelay = 100;
+    const erasingDelay = 70;
+    const holdTime = 2000;
+
+    let wordIndex = 0;
+    let charIndex = 0;
+
+    function typeWord() {
+        taglineEl.classList.add("cursor"); // show cursor while typing
+        if (charIndex < words[wordIndex].length) {
+            taglineEl.textContent = fixed + words[wordIndex].substring(0, charIndex + 1);
+            charIndex++;
+            setTimeout(typeWord, typingDelay);
+        } else {
+            taglineEl.classList.remove("cursor"); // hide cursor when fully typed
+            setTimeout(deleteWord, holdTime);
+        }
+    }
+
+    function deleteWord() {
+        taglineEl.classList.add("cursor"); // show cursor while deleting
+        if (charIndex > 0) {
+            charIndex--;
+            taglineEl.textContent = fixed + words[wordIndex].substring(0, charIndex);
+            setTimeout(deleteWord, erasingDelay);
+        } else {
+            taglineEl.classList.remove("cursor"); // hide cursor when only "Aspiring " is left
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(typeWord, typingDelay);
+        }
+    }
+
+    function typeName(text, delay, callback) {
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                nameEl.textContent += text.charAt(i);
+                i++;
+                setTimeout(typing, delay);
+            } else if (callback) {
+                callback();
+            }
+        }
+        typing();
+    }
+
+    // Start typing effect
+    typeName("Tanay Shah", 120, () => {
+        taglineEl.textContent = fixed;
+        setTimeout(typeWord, holdTime);
     });
 });
 </script>
