@@ -12,13 +12,21 @@
       text-align: center;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
+    }
+    h2 {
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 1.5rem;
     }
     img {
       max-width: 90%;
       max-height: 80vh;
-      margin-top: 5vh;
+      margin: 5vh auto;
+      display: block;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+      object-fit: contain;
     }
     .nav-btn {
       position: fixed;
@@ -32,13 +40,43 @@
       border-radius: 50%;
       cursor: pointer;
       transition: 0.3s;
+      z-index: 10;
     }
     .nav-btn:hover { background: rgba(255,255,255,0.4); }
     #prev { left: 30px; }
     #next { right: 30px; }
-    h2 {
-      margin-top: 20px;
-      font-weight: 600;
+
+    /* ✅ Responsive adjustments */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 15px;
+      }
+      img {
+        max-width: 95%;
+        max-height: 70vh;
+        margin-top: 6vh;
+      }
+      .nav-btn {
+        font-size: 1.6rem;
+        padding: 8px 12px;
+        background: rgba(255,255,255,0.25);
+      }
+      #prev { left: 15px; }
+      #next { right: 15px; }
+    }
+
+    @media (max-width: 480px) {
+      img {
+        max-width: 100%;
+        max-height: 65vh;
+      }
+      .nav-btn {
+        font-size: 1.4rem;
+        padding: 6px 10px;
+      }
+      #prev { left: 10px; }
+      #next { right: 10px; }
     }
   </style>
 </head>
