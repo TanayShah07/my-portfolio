@@ -72,12 +72,21 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      margin: 0 auto;
     }
     .dark-bg img {
       width: 120px;
       height: auto;
       object-fit: contain;
       background: transparent;
+    }
+    .project-type {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #6c757d;
+      font-weight: 500;
+      text-align: center;
     }
     .project-content h5 {
       font-weight: 600;
@@ -97,7 +106,10 @@
         text-align: center;
       }
       .project-card img {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
+      }
+      .dark-bg {
+        margin-bottom: 8px;
       }
       .project-content {
         text-align: center;
@@ -139,12 +151,14 @@
 
     <!-- Gemini Chat -->
     <div class="project-card">
-      <img src="/assets/projects/gemini-chat-thumb.png" alt="Gemini Chat Thumbnail">
+      <div class="text-center">
+        <img src="/assets/projects/gemini-chat-thumb.png" alt="Gemini Chat Thumbnail">
+        <p class="project-type">Mobile Application</p>
+      </div>
       <div class="project-content">
         <h4>Gemini Chat</h4>
-        <p>Made on Android Studio</p>
         <h6>September 2025 to October 2025</h6>
-        <p>
+        <p>Made on Android Studio <br>
           A native Android chat application built in Java using Android Studio. The app integrates  
           Gemini AI for smart responses and demonstrates modern mobile development practices. 
           This project highlights clean UI design, structured app architecture, and AI-powered interactions.
@@ -159,14 +173,16 @@
     </div>
 
     <div class="project-card">
-      <div class="dark-bg">
-        <img src="/assets/projects/CollegeBuddy/logo.png" alt="CollegeBuddy Logo">
+      <div class="text-center">
+        <div class="dark-bg">
+          <img src="/assets/projects/CollegeBuddy/logo.png" alt="CollegeBuddy Logo">
+        </div>
+        <p class="project-type">Desktop Website</p>
       </div>  
       <div class="project-content">
         <h4>College Buddy</h4>
-        <p>Made on Visual Studio Code</p>
         <h6>July 2024 to November 2025</h6>
-        <p>
+        <p>Made on Visual Studio Code <br>
           College Buddy is a real-time peer-matching and communication platform designed to connect college students. 
           It enables students to find study partners or buddies based on shared interests, chat instantly, and share resources — 
           all within a safe, moderated environment.
@@ -181,12 +197,14 @@
     </div>
 
     <div class="project-card">
-      <img src="/assets/projects/NeuraTask/logo.png" alt="NeuraTask Logo">
+      <div class="text-center">
+        <img src="/assets/projects/NeuraTask/logo.png" alt="NeuraTask Logo">
+        <p class="project-type">Mobile Application</p>
+      </div>
       <div class="project-content">
         <h4>NeuraTask</h4>
-        <p>Made on Android Studio</p>
         <h6>September 2025 to Present</h6>
-        <p>
+        <p>Made on Android Studio <br>
           NeuraTask is an AI-assisted assignment tracker app designed to help students organize, manage, and stay on top 
           of their academic tasks efficiently. It allows users to track deadlines, receive smart reminders, and plan their 
           work seamlessly with the help of intelligent assistance.
