@@ -102,7 +102,7 @@
       margin-top: 10px;
     }
 
-    /* 🔴 Live badge styling */
+    /* 🔵 Live badge styling */
     .live-badge {
       position: absolute;
       top: 10px;
@@ -118,6 +118,7 @@
       gap: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
+      z-index: 5;
     }
     .live-badge:hover {
       background: #084298;
@@ -222,6 +223,10 @@
 
     <!-- College Buddy -->
     <div class="project-card">
+      <div class="live-badge" onclick="window.open('https://college-buddy-mu.vercel.app', '_blank')">
+        <i class="fas fa-arrow-up-right-from-square"></i> Live
+      </div>
+
       <div class="text-center">
         <div class="dark-bg">
           <img src="/assets/projects/CollegeBuddy/logo.png" alt="CollegeBuddy Logo">
@@ -270,7 +275,7 @@
 
     <!-- Scribber -->
     <div class="project-card">
-      <!-- 🔴 Live Badge -->
+      <!-- 🔵 Live Badge -->
       <div class="live-badge" onclick="window.open('https://scribber-6u4w.vercel.app/', '_blank')">
         <i class="fas fa-arrow-up-right-from-square"></i> Live
       </div>
