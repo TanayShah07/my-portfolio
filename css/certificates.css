@@ -1,0 +1,132 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  .navbar-glass {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 8px 15px;
+  }
+
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0d6efd;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+
+  h2.section-title {
+    font-weight: 600;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #0d6efd;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  /* Clean sections */
+  .section-block {
+    margin-bottom: 50px;
+  }
+
+  /* Toggle header */
+  .toggle-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    font-size: 1.4rem;
+    color: #0d6efd;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .toggle-header i {
+    transition: transform 0.25s ease;
+    font-size: 1.2rem;
+  }
+
+  .toggle-header.collapsed i {
+    transform: rotate(0deg);
+  }
+
+  .toggle-header:not(.collapsed) i {
+    transform: rotate(90deg);
+  }
+
+  /* Fade in collapse */
+  .collapse {
+    transition: all 0.4s ease;
+  }
+
+  /* Certificate card */
+  .certificate-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.10);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-left: 4px solid #0d6efd;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+  }
+
+  .certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  }
+
+  .certificate-card img {
+    width: 160px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+
+  h3 {
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+  }
+
+  /* Fade animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .certificate-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .certificate-card img {
+      margin-bottom: 15px;
+    }
+  }

@@ -1,0 +1,80 @@
+ body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #212529;
+      margin: 0;
+      line-height: 1.7;
+    }
+    body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    }
+    .navbar-glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(0, 0, 0, 0.9) !important;
+    }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      position: relative;
+      padding: 8px 15px;
+    }
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #0d6efd;
+      transition: width 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+    h2.section-title {
+      font-weight: 600;
+      margin-bottom: 40px;
+      border-bottom: 3px solid #0d6efd;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .paper-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-left: 4px solid #0d6efd;
+    }
+    .paper-card img {
+      width: 160px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .paper-content h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .paper-content p {
+      font-size: 0.95rem;
+      color: #495057;
+    }
+    .paper-content .btn {
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+      .paper-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .paper-card img {
+        margin-bottom: 15px;
+      }
+      .paper-content {
+        text-align: center;
+      }
+    }
