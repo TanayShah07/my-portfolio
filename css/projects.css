@@ -159,3 +159,22 @@
         text-align: center;
       }
     }
+    .tech-stack {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.tech-stack .badge {
+  margin-right: 6px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.qure-logo{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:50%;
+}

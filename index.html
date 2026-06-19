@@ -18,6 +18,7 @@
 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="/about.html">About Me</a></li>
 <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
 <li class="nav-item"><a class="nav-link" href="/certificates.html">Certificates</a></li>
 <li class="nav-item"><a class="nav-link" href="/achievements.html">Achievements</a></li>
@@ -37,26 +38,122 @@
 </div>
 </nav>
 <section class="hero">
-<div class="hero-content">
-<h1 id="typed-name"></h1>
-<p id="typed-tagline"></p><br>
-<a href="/projects.html" class="btn btn-primary btn-lg mt-3">
-  <i class="fas fa-folder-open me-2"></i> View My Projects
-</a>
-</div>
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <div class="col-lg-9 mx-auto text-center">
+        <div class="hero-content">
+          <h1 id="typed-name"></h1>
+          <p id="typed-tagline"></p><br>
+
+          <a href="/projects.html" class="btn btn-primary btn-lg mt-3">
+            <i class="fas fa-folder-open me-2"></i> View My Projects
+          </a>
+
+          <a href="/contact.html" class="btn btn-outline-light btn-lg mt-3 ms-2">
+            <i class="fas fa-envelope me-2"></i> Contact Me
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 <main class="container mt-5 pt-5">
 <section class="text-center">
-<p>I specialize in building responsive web and mobile applications using modern technologies. Passionate about problem-solving and user-focused design, I bring a practical and creative approach to development.</p>
+<p>
+  Aspiring software engineer focused on AI engineering, full-stack systems, and intelligent product development. I build scalable, user-centric applications that combine modern software architecture with practical machine learning to solve meaningful real-world problems.
+</p>
 </section>
+
+  <section class="exploring-section">
+  <h2>Currently Exploring</h2>
+
+  <div class="explore-grid">
+    <div class="explore-card">
+      <i class="fas fa-robot"></i>
+      <h5>Agentic AI Systems</h5>
+      <p>Building autonomous AI workflows with reasoning, memory, and tool usage.</p>
+    </div>
+
+    <div class="explore-card">
+      <i class="fas fa-brain"></i>
+      <h5>NLP & Deep Learning</h5>
+      <p>Exploring language models, embeddings, transformers, and intelligent prediction systems.</p>
+    </div>
+
+    <div class="explore-card">
+      <i class="fas fa-shield-alt"></i>
+      <h5>Post-Quantum Cryptography</h5>
+      <p>Studying cryptographic systems resilient to quantum computing attacks.</p>
+    </div>
+  </div>
+</section>
+
 <section class="highlights text-center">
 <div class="row">
-<div class="col-md-3"><i class="fas fa-code"></i><p>Full Stack Development</p></div>
-<div class="col-md-3"><i class="fas fa-mobile-alt"></i><p>Android App Development</p></div>
-<div class="col-md-3"><i class="fas fa-database"></i><p>Databases & APIs</p></div>
-<div class="col-md-3"><i class="fas fa-lightbulb"></i><p>Problem Solving</p></div>
+<div class="col-md-3"><i class="fas fa-code"></i><p>AI Engineering</p></div>
+<div class="col-md-3"><i class="fas fa-mobile-alt"></i><p>Product Development</p></div>
+<div class="col-md-3"><i class="fas fa-diagram-project"></i><p>System Design</p></div>
+<div class="col-md-3"><i class="fas fa-lightbulb"></i><p>Research Mindset</p></div>
 </div>
 </section>
+
+<section class="featured-projects">
+  <h2>Featured Projects</h2>
+  <p class="section-subtitle">
+    A selection of projects spanning AI, research, and full-stack product engineering.
+  </p>
+
+  <div class="project-preview-grid">
+
+    <div class="project-preview-card">
+      <img src="/assets/projects/Qure/logo.png" alt="QURE">
+      <h5>QURE</h5>
+      <p>
+        Research-driven platform comparing RSA and Post-Quantum Cryptography
+        through interactive learning modules.
+      </p>
+    </div>
+
+   <div class="project-preview-card">
+      <div class="preview-dark-bg">
+        <img src="/assets/projects/CollegeBuddy/logo.png" alt="CollegeBuddy">
+      </div>
+
+      <h5>CollegeBuddy</h5>
+      <p>
+        Real-time peer matching and chat platform helping students connect,
+        collaborate, and share resources.
+      </p>
+    </div>
+
+    <div class="project-preview-card plotune-disabled">
+
+      <div class="loader-wrapper">
+        <div class="mini-loader"></div>
+      </div>
+
+      <img src="/assets/projects/Plotune/logo.png" alt="Plotune">
+
+      <h5>Plotune</h5>
+      <p>
+        AI-powered movie and song prediction engine using NLP and deep learning
+        from descriptions or lyrics.
+      </p>
+
+      <small class="coming-text">Coming Soon</small>
+    </div>
+
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="/projects.html" class="see-projects-link">
+      See All Projects <i class="fas fa-arrow-right ms-2"></i>
+    </a>
+  </div>
+</section>
+
 <section class="skills-section">
 <h2>Skills</h2>
 <div class="skills-grid">
@@ -85,38 +182,6 @@
 <ul><li>Problem Solving</li><li>Critical Thinking</li><li>Teamwork</li><li>Communication</li><li>Time Management</li></ul>
 </div>
 </div>
-</section>
-<section class="hobbies-section">
-  <h2>Hobbies & Interests</h2>
-  <div class="row mt-3">
-    <div class="col-md-6">
-      <h5>🎬 Acting</h5>
-      <p>
-        Performed in a short film released on YouTube.
-        <br>
-        <a href="https://youtu.be/Kq9MWndeCOQ?si=8LhlKNINKzvTPAz0" 
-           target="_blank" 
-           class="btn btn-outline-primary btn-sm mt-2">
-          Watch Here
-        </a>
-      </p>
-    </div>
-
-    <div class="col-md-6">
-      <h5>♟️ Chess</h5>
-      <p>Helps me improve strategy, patience, and focus.</p>
-    </div>
-
-    <div class="col-md-6">
-      <h5>📚 Reading</h5>
-      <p>Enjoy exploring technology, fiction, and personal-growth literature.</p>
-    </div>
-
-    <div class="col-md-6">
-      <h5>🚴‍♂️ Cycling</h5>
-      <p>Great for discipline, fitness, and clearing the mind.</p>
-    </div>
-  </div>
 </section>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
