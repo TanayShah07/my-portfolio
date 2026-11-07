@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const taglineEl = document.getElementById("typed-tagline");
 
     const taglines = [
-        "an AI Engineer",
-        "a Full-Stack Developer",
-        "a Research Enthusiast",
-        "building the future"
-    ];
+  "AI Engineer",
+  "Full-Stack Developer",
+  "Software Engineer",
+  "Researcher"
+];
 
     let taglineIndex = 0;
     let charIndex = 0;
