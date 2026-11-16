@@ -1,0 +1,568 @@
+
+/* =========================================
+   GENERAL STYLING
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    color: #212529;
+    line-height: 1.7;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar-glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    position: relative;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #0d6efd;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffffff;
+}
+
+
+/* =========================================
+   EXPERIENCE MAIN CONTAINER
+========================================= */
+
+.experience-container {
+    padding-top: 125px;
+    padding-bottom: 50px;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.experience-heading {
+    margin-bottom: 65px;
+}
+
+.heading-label {
+    color: #0d6efd;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.experience-heading h1 {
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-top: 12px;
+    letter-spacing: -1.5px;
+}
+
+.experience-heading h1 span {
+    color: #0d6efd;
+}
+
+.experience-heading p {
+    color: #6c757d;
+    font-size: 1.05rem;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   EXPERIENCE CARDS
+========================================= */
+
+.experience-timeline {
+    max-width: 950px;
+    margin: auto;
+}
+
+.experience-card {
+    background: #ffffff;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    padding: 32px;
+
+    border: 1px solid #e9ecef;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================
+   EXPERIENCE HEADER
+========================================= */
+
+.experience-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    position: relative;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #e9ecef;
+}
+
+.company-icon {
+    min-width: 65px;
+    height: 65px;
+
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.7rem;
+}
+
+.amdox-icon {
+    color: #0d6efd;
+    background: #eaf2ff;
+}
+
+.katalyst-icon {
+    color: #7952b3;
+    background: #f1eaff;
+}
+
+.experience-title {
+    flex: 1;
+}
+
+.experience-title h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.experience-title h5 {
+    font-size: 1rem;
+    color: #0d6efd;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.experience-date {
+    font-size: 0.87rem;
+    color: #6c757d;
+}
+
+.experience-date i {
+    margin-right: 5px;
+}
+
+.experience-type {
+    background: #eaf2ff;
+    color: #0d6efd;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.work-type {
+    background: #f1eaff;
+    color: #7952b3;
+}
+
+
+/* =========================================
+   EXPERIENCE BODY
+========================================= */
+
+.experience-body {
+    padding-top: 25px;
+}
+
+.experience-body p {
+    color: #555;
+}
+
+.experience-body h6 {
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.experience-body ul {
+    padding-left: 22px;
+    color: #555;
+}
+
+.experience-body li {
+    margin-bottom: 9px;
+}
+
+.project-name {
+    color: #212529 !important;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.project-name i {
+    color: #0d6efd;
+    margin-right: 8px;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.tech-tags,
+.brand-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.tech-tags span,
+.brand-tags span {
+    background: #f0f4fa;
+    color: #344054;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.brand-tags span {
+    background: #f3effb;
+    color: #68449b;
+}
+
+
+/* =========================================
+   GITHUB BUTTON
+========================================= */
+
+.github-btn {
+    margin-top: 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 9px 17px;
+    transition: all 0.25s ease;
+}
+
+.github-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   EXPERIENCE PROOF SECTION
+========================================= */
+
+.experience-proof {
+    margin-top: 35px;
+    padding-top: 5px;
+}
+
+.experience-proof-heading {
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #212529;
+}
+
+.experience-proof-heading i {
+    color: #0d6efd;
+}
+
+
+/* =========================================
+   CERTIFICATE TILES
+========================================= */
+
+.certificate-card {
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    border-left: 4px solid #0d6efd;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Certificate Preview */
+
+.certificate-card img {
+    width: 160px;
+
+    height: auto;
+
+    max-height: 220px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Certificate Information */
+
+.certificate-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.certificate-content h5 {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #212529;
+}
+
+.certificate-content p {
+    color: #495057;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+
+/* Certificate Buttons */
+
+.certificate-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.certificate-actions .btn {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 7px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.experience-footer-note {
+    text-align: center;
+
+    color: #6c757d;
+
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+    font-weight: 600;
+}
+
+.experience-footer-note i {
+    color: #0d6efd;
+    margin-right: 8px;
+}
+
+footer {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 991px) {
+
+    .navbar-nav .nav-link {
+        padding: 10px 5px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+
+    .experience-container {
+        padding-top: 105px;
+    }
+
+    .experience-heading {
+        margin-bottom: 45px;
+    }
+
+    .experience-card {
+        padding: 22px;
+    }
+
+    .experience-top {
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+
+    .experience-title h3 {
+        font-size: 1.15rem;
+    }
+
+    .experience-type {
+        margin-left: 65px;
+    }
+
+    .certificate-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .certificate-card img {
+        width: 140px;
+        max-height: 190px;
+        margin-bottom: 10px;
+    }
+
+    .certificate-actions {
+        justify-content: center;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .experience-top {
+        gap: 12px;
+    }
+
+    .company-icon {
+        min-width: 52px;
+        height: 52px;
+        font-size: 1.35rem;
+    }
+
+    .experience-type {
+        margin-left: 65px;
+    }
+
+    .experience-card {
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .experience-heading h1 {
+        font-size: 2.2rem;
+    }
+
+    .certificate-card {
+        padding: 16px;
+    }
+
+    .certificate-content h5 {
+        font-size: 0.98rem;
+    }
+
+}
